@@ -1,22 +1,9 @@
-# Distribution-Balanced Loss
 
-[[Paper]](https://arxiv.org/abs/2007.09654)
-
-The implementation of our paper *Distribution-Balanced Loss for Multi-Label Classification in Long-Tailed Datasets* (ECCV2020 **Spotlight**).
- 
-[Tong Wu](https://github.com/wutong16)<sup></sup>,&nbsp;[Qingqiu Huang](http://qqhuang.cn/),&nbsp;[Ziwei Liu](https://liuziwei7.github.io/)<sup></sup>,&nbsp;[Yu Wang](http://nicsefc.ee.tsinghua.edu.cn/people/yu-wang/),&nbsp;[Dahua Lin](http://dahua.me/).&nbsp;
- 
-<img src='./assets/overall.png' width=800>
 
 ## Requirements 
 * [Pytorch](https://pytorch.org/)
 * [Sklearn](https://scikit-learn.org/stable/)
 
-## Installation
-```
-git clone git@github.com:wutong16/DistributionBalancedLoss.git
-cd DistributionBalancedLoss
-```
 ## Quick start
 
 ### Training
@@ -94,21 +81,10 @@ python tools/create_longtail_dataset.py
 ```
 To update the corresponding `class_freq.pkl` files, please refer to `def _save_info` in `.\mllt\datasets\custom.py`.
 
-## License and Citation
-The use of this software is RESTRICTED to **non-commercial research and educational purposes**.
-```
-@inproceedings{DistributionBalancedLoss,
-  title={Distribution-Balanced Loss for Multi-Label Classification in Long-Tailed Datasets},
-  author={Wu, Tong and Huang, Qingqiu and Liu, Ziwei and Wang, Yu and Lin, Dahua},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2020}
-}
-```
+
 ## TODO
 - [ ] Distributed training is not supported currently
 - [ ] Evaluation with single GPU is not supported currently
 - [ ] test pytorch 0.4.0
 
-## Contact
 
-This repo is currently maintained by [@wutong16](https://github.com/wutong16) and [@hqqasw](https://github.com/hqqasw)
