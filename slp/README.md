@@ -48,43 +48,5 @@ bash tools/dist_test.sh configs/voc/LT_resnet50_pfc_DB.py work_dirs/LT_voc_resne
 
 <img src='./assets/dataset.png' width=400>
 
-### Use our dataset
-The long-tail multi-label datasets we use in the paper are created from [MS COCO](https://cocodataset.org/) 2017 and [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/) 2012. Annotations and statistics data resuired when training are saved under `./appendix` in this repo.
-```
-appendix
-  |--coco
-    |--longtail2017
-      |--class_freq.pkl
-      |--class_split.pkl
-      |--img_id.pkl
-  |--VOCdevkit
-    |--longtail2012
-      |--class_freq.pkl
-      |--class_split.pkl
-      |--img_id.pkl
-```
-
-### Try your own
-You can also create a new long-tailed dataset by downloading the annotations, `terse_gt_2017.pkl` for COCO and `terse_gt_2012.pkl` for VOC, from [here](https://drive.google.com/drive/folders/1B7-GODp-HDH24OzEafCIV4IfAJ_R7NuE?usp=sharing) and move them into the right folders as below.
-```
-appendix
-  |--coco
-    |--longtail2017
-      |--terse_gt_2017.pkl
-  |--VOCdevkit
-    |--longtail2012
-      |--terse_gt_2012.pkl
-```
-Then run the following command, adjust the parameters as you like to control the distribution.
-```
-python tools/create_longtail_dataset.py
-```
-To update the corresponding `class_freq.pkl` files, please refer to `def _save_info` in `.\mllt\datasets\custom.py`.
-
-
-## TODO
-- [ ] Distributed training is not supported currently
-- [ ] Evaluation with single GPU is not supported currently
-- [ ] test pytorch 0.4.0
 
 
